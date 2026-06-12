@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html
+  namespace: demo
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+      <meta charset="UTF-8">
+      <title>Démo GitOps Argo CD</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: linear-gradient(135deg, #0f172a, #1e3a8a);
+          color: white;
+          text-align: center;
+          padding-top: 80px;
+        }
+
+        .card {
+          background: rgba(255, 255, 255, 0.12);
+          border-radius: 16px;
+          padding: 40px;
+          width: 70%;
+          margin: auto;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+          font-size: 42px;
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          color: #93c5fd;
+          margin-bottom: 30px;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 1.6;
+        }
+
+        .badge {
+          display: inline-block;
+          margin-top: 25px;
+          padding: 12px 24px;
+          background: #22c55e;
+          color: #052e16;
+          border-radius: 999px;
+          font-weight: bold;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h1>Démo GitOps avec Argo CD</h1>
+        <h2>Kubernetes + GitHub + Argo CD</h2>
+
+        <p>
+          Cette page Nginx a été personnalisée avec une ConfigMap Kubernetes.
+        </p>
+
+        <p>
+          Le contenu est stocké dans GitHub, puis synchronisé automatiquement
+          dans Kubernetes par Argo CD.
+        </p>
+
+        <div class="badge">
+          Application déployée avec succès
+        </div>
+      </div>
+    </body>
+    </html>
